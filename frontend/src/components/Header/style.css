@@ -1,0 +1,25 @@
+header {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	margin-top: 35px;
+}
+
+header h1 {
+	color: #3071d9;
+	font-size: 72px;
+}
+
+header h1::after {
+	content: '';
+	width: 270px;
+	height: 2px;
+	background-color: rgba(34, 110, 216, 0.5);
+	display: block;
+	margin: 0 auto;
+}
+
+header h1 span {
+	font-style: italic;
+	font-weight: normal;
+}

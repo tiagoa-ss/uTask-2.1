@@ -1,0 +1,33 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Ubuntu;
+}
+
+body.dark {
+	background: #232323;
+}
+
+body.dark .tarefas {
+	background: #484e54;
+	color: #ececec;
+}
+
+body.dark .done li {
+	text-decoration: line-through;
+	color: #ececec;
+}
+
+input:focus {
+	outline: none;
+}
+
+button {
+	all: unset;
+	cursor: pointer;
+	outline: revert;
+}
