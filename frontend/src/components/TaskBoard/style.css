@@ -1,0 +1,48 @@
+.todos {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	gap: 35px;
+	margin-top: 20px;
+}
+
+.tarefas {
+	border: 1px solid #d9d9d9;
+	width: 300px;
+	height: 350px;
+	margin-top: 15px;
+	border-radius: 10px;
+	box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+h2 {
+	text-align: center;
+	font-size: 36px;
+	font-weight: 400;
+	padding: 10px;
+}
+
+.tarefas h2::after {
+	content: '';
+	width: 250px;
+	height: 2px;
+	background-color: #d9d9d9;
+	display: block;
+	margin: 10px auto;
+}
+
+.done li {
+	text-decoration: line-through;
+	color: rgba(0, 0, 0, 0.6);
+}
+
+.todo-item {
+	display: flex;
+	justify-content: space-between;
+	margin: 5px 25px;
+	margin-bottom: 15px;
+}
+
+.todo-icons > button {
+	margin-right: 15px;
+}
