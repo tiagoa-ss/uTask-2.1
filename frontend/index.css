@@ -25,3 +25,9 @@ body.dark .done li {
 input:focus {
 	outline: none;
 }
+
+button {
+	all: unset;
+	cursor: pointer;
+	outline: revert;
+}
