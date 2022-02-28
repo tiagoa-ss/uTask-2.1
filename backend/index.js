@@ -14,7 +14,6 @@ app.use('/task', taskRoutes)
 
 const DB_USER = process.env.DB_USER
 const DB_PASSWORD = process.env.DB_PASSWORD
-console.log(DB_USER, DB_PASSWORD)
 
 mongoose
 	.connect(
