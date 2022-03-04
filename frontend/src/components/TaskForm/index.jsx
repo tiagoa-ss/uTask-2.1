@@ -5,13 +5,6 @@ import './style.css'
 import blackPlus from '../../assets/black-plus.svg'
 
 export function TaskForm() {
-	// useEffect(() => {
-	// 	axios.post('http://localhost:3003/task', {
-	// 		title: '',
-	// 		category: 0,
-	// 	})
-	// }, [])
-
 	useEffect(() => {
 		const button = document.querySelector('button[type="submit"]')
 		const inputField = document.querySelector('input[type="text"]')

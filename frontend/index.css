@@ -30,4 +30,12 @@ button {
 	all: unset;
 	cursor: pointer;
 	outline: revert;
+	margin-right: 10px;
+}
+
+a {
+	all: unset;
+	cursor: pointer;
+	outline: revert;
+	margin-right: 10px;
 }

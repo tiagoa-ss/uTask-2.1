@@ -16,12 +16,13 @@ export function TaskBoard(props) {
 			.get('http://localhost:3003/task')
 			.then((res) => {
 				setTasks(res.data)
-				// console.log(res.data)
 			})
 			.catch((err) => {
 				console.log(err)
 			})
 	}, [])
+
+	function handleCategory() {}
 
 	return (
 		<section className='tarefas'>
@@ -33,18 +34,18 @@ export function TaskBoard(props) {
 							<li className='todo-item' key={task._id}>
 								<p>{task.title}</p>
 								<div className='todo-icons'>
-									<button>
+									<a href={`/task/${task._id}`}>
 										<img
 											src={rightArrow}
 											alt='Botão de mover uma tarefa para doing azul'
 										/>
-									</button>
-									<button id='delete'>
+									</a>
+									<a id='delete'>
 										<img
 											src={deleteIcon}
 											alt='Botão de deletar uma tarefa vermelho'
 										/>
-									</button>
+									</a>
 								</div>
 							</li>
 						)
@@ -53,18 +54,18 @@ export function TaskBoard(props) {
 							<li className='todo-item' key={task._id}>
 								<p>{task.title}</p>
 								<div className='todo-icons'>
-									<button>
+									<a href={`/task/${task._id}`}>
 										<img
 											src={checkMark}
 											alt='Botão de mover uma tarefa para done verde'
 										/>
-									</button>
-									<button id='delete'>
+									</a>
+									<a id='delete'>
 										<img
 											src={deleteIcon}
 											alt='Botão de deletar uma tarefa vermelho'
 										/>
-									</button>
+									</a>
 								</div>
 							</li>
 						)
@@ -73,18 +74,18 @@ export function TaskBoard(props) {
 							<li className='todo-item' key={task._id}>
 								<p>{task.title}</p>
 								<div className='todo-icons'>
-									<button>
+									<a href={`/task/${task._id}`}>
 										<img
 											src={returnIcon}
 											alt='Botão de mover uma tarefa para to do preto'
 										/>
-									</button>
-									<button id='delete'>
+									</a>
+									<a id='delete'>
 										<img
 											src={deleteIcon}
 											alt='Botão de deletar uma tarefa vermelho'
 										/>
-									</button>
+									</a>
 								</div>
 							</li>
 						)
