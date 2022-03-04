@@ -20,9 +20,49 @@ export function TaskBoard(props) {
 			.catch((err) => {
 				console.log(err)
 			})
-	}, [])
+	}, [{ tasks }])
 
-	function handleCategory() {}
+	function category1to2(e) {
+		const id = e.target.parentElement.id
+		axios
+			.patch(`http://localhost:3003/task/${id}`, { category: 2 })
+			.then(() => {
+				console.log('Categoria alterada com sucesso')
+			})
+			.catch((err) => console.log(err))
+	}
+
+	function category2to3(e) {
+		const id = e.target.parentElement.id
+		axios
+			.patch(`http://localhost:3003/task/${id}`, { category: 3 })
+			.then(() => {
+				console.log('Categoria alterada com sucesso')
+			})
+			.catch((err) => console.log(err))
+	}
+
+	function category3to1(e) {
+		const id = e.target.parentElement.id
+		axios
+			.patch(`http://localhost:3003/task/${id}`, { category: 1 })
+			.then(() => {
+				console.log('Categoria alterada com sucesso')
+			})
+			.catch((err) => console.log(err))
+	}
+
+	function deleteTask(e) {
+		const id = e.target.parentElement.id
+		axios
+			.delete(`http://localhost:3003/task/${id}`)
+			.then(() => {
+				console.log('Tarefa deletada com sucesso')
+			})
+			.catch((err) => {
+				console.log(err)
+			})
+	}
 
 	return (
 		<section className='tarefas'>
@@ -34,18 +74,18 @@ export function TaskBoard(props) {
 							<li className='todo-item' key={task._id}>
 								<p>{task.title}</p>
 								<div className='todo-icons'>
-									<a href={`/task/${task._id}`}>
+									<button onClick={category1to2} id={task._id}>
 										<img
 											src={rightArrow}
 											alt='Botão de mover uma tarefa para doing azul'
 										/>
-									</a>
-									<a id='delete'>
+									</button>
+									<button id='delete' onClick={deleteTask} id={task._id}>
 										<img
 											src={deleteIcon}
 											alt='Botão de deletar uma tarefa vermelho'
 										/>
-									</a>
+									</button>
 								</div>
 							</li>
 						)
@@ -54,18 +94,18 @@ export function TaskBoard(props) {
 							<li className='todo-item' key={task._id}>
 								<p>{task.title}</p>
 								<div className='todo-icons'>
-									<a href={`/task/${task._id}`}>
+									<button onClick={category2to3} id={task._id}>
 										<img
 											src={checkMark}
 											alt='Botão de mover uma tarefa para done verde'
 										/>
-									</a>
-									<a id='delete'>
+									</button>
+									<button id='delete' onClick={deleteTask} id={task._id}>
 										<img
 											src={deleteIcon}
 											alt='Botão de deletar uma tarefa vermelho'
 										/>
-									</a>
+									</button>
 								</div>
 							</li>
 						)
@@ -74,18 +114,18 @@ export function TaskBoard(props) {
 							<li className='todo-item' key={task._id}>
 								<p>{task.title}</p>
 								<div className='todo-icons'>
-									<a href={`/task/${task._id}`}>
+									<button onClick={category3to1} id={task._id}>
 										<img
 											src={returnIcon}
 											alt='Botão de mover uma tarefa para to do preto'
 										/>
-									</a>
-									<a id='delete'>
+									</button>
+									<button id='delete' onClick={deleteTask} id={task._id}>
 										<img
 											src={deleteIcon}
 											alt='Botão de deletar uma tarefa vermelho'
 										/>
-									</a>
+									</button>
 								</div>
 							</li>
 						)

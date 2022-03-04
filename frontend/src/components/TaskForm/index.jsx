@@ -23,7 +23,7 @@ export function TaskForm() {
 					category: 1,
 				})
 				.then(() => {
-					location.reload()
+					console.log('Pessoa adicionada com sucesso')
 				})
 				.catch((err) => console.log(err))
 

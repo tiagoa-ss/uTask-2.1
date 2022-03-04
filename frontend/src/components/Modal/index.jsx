@@ -9,6 +9,7 @@ export function Modal({ id = 'modal', onClose = () => {} }) {
 
 	function switchTheme(e) {
 		document.body.classList.toggle('dark')
+		document.querySelector('.modal').classList.toggle('dark')
 	}
 
 	return (

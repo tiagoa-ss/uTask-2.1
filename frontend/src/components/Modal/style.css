@@ -18,6 +18,20 @@
 	font-size: 22px;
 }
 
+.modal h2::after {
+	content: '';
+	width: 100%;
+	height: 2px;
+	background-color: #d9d9d9;
+	display: block;
+	margin: 10px auto;
+}
+
+.modal.dark {
+	background: #484e54;
+	color: #fff;
+}
+
 @keyframes modal {
 	from {
 		opacity: 0;
@@ -79,6 +93,17 @@
 	justify-content: space-between;
 }
 
+#input-back {
+	border: none;
+	border-bottom: solid 1px #00000050;
+}
+
+.modal.dark #input-back {
+	background: #232323;
+	color: #fff;
+	border-bottom: solid 1px #ffffff50;
+}
+
 .switch {
 	position: relative;
 	display: inline-block;
@@ -119,7 +144,7 @@
 }
 
 input:checked + .slider {
-	background-color: #2196f3;
+	background-color: #000;
 }
 
 input:focus + .slider {
