@@ -6,6 +6,9 @@
 
 body {
 	font-family: Ubuntu;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: #00000004;
 }
 
 body.dark {

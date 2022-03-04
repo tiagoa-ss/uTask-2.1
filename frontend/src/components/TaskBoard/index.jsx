@@ -17,9 +17,7 @@ export function TaskBoard(props) {
 			.then((res) => {
 				setTasks(res.data)
 			})
-			.catch((err) => {
-				console.log(err)
-			})
+			.catch((err) => console.log(err))
 	}, [{ tasks }])
 
 	function category1to2(e) {
@@ -80,7 +78,7 @@ export function TaskBoard(props) {
 											alt='Botão de mover uma tarefa para doing azul'
 										/>
 									</button>
-									<button id='delete' onClick={deleteTask} id={task._id}>
+									<button onClick={deleteTask} id={task._id}>
 										<img
 											src={deleteIcon}
 											alt='Botão de deletar uma tarefa vermelho'
@@ -100,7 +98,7 @@ export function TaskBoard(props) {
 											alt='Botão de mover uma tarefa para done verde'
 										/>
 									</button>
-									<button id='delete' onClick={deleteTask} id={task._id}>
+									<button onClick={deleteTask} id={task._id}>
 										<img
 											src={deleteIcon}
 											alt='Botão de deletar uma tarefa vermelho'
@@ -120,7 +118,7 @@ export function TaskBoard(props) {
 											alt='Botão de mover uma tarefa para to do preto'
 										/>
 									</button>
-									<button id='delete' onClick={deleteTask} id={task._id}>
+									<button onClick={deleteTask} id={task._id}>
 										<img
 											src={deleteIcon}
 											alt='Botão de deletar uma tarefa vermelho'

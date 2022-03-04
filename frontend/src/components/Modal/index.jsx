@@ -12,6 +12,23 @@ export function Modal({ id = 'modal', onClose = () => {} }) {
 		document.querySelector('.modal').classList.toggle('dark')
 	}
 
+	function changeBackground(e) {
+		e.preventDefault()
+		const inputBack = document.querySelector('#input-back')
+		const imageUrl = inputBack.value
+
+		document.body.style.backgroundImage = `url('${imageUrl}')`
+
+		inputBack.value = ''
+		onClose()
+	}
+
+	function cleanBackground(e) {
+		e.preventDefault()
+		document.body.style.backgroundImage = ''
+		onClose()
+	}
+
 	return (
 		<div id={id} className='modal-container' onClick={closeModal}>
 			<div className='modal'>
@@ -19,7 +36,7 @@ export function Modal({ id = 'modal', onClose = () => {} }) {
 				<div id='dark-mode'>
 					<p>Dark Mode</p>
 					<label className='switch'>
-						<input type='checkbox' id='btn-theme' onClick={switchTheme} />
+						<input type='checkbox' id='btn-theme' onChange={switchTheme} />
 						<span className='slider round'></span>
 					</label>
 				</div>
@@ -28,8 +45,10 @@ export function Modal({ id = 'modal', onClose = () => {} }) {
 					<form>
 						<input type='text' id='input-back' />
 						<div className='buttons'>
-							<button id='branco'>Limpar</button>
-							<button type='submit' id='azul'>
+							<button id='branco' onClick={cleanBackground}>
+								Limpar
+							</button>
+							<button type='submit' id='azul' onClick={changeBackground}>
 								Aplicar
 							</button>
 						</div>
